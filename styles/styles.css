@@ -8,6 +8,12 @@ main {
   flex-direction: column;
 }
 
+.main-title {
+  font-family: "Press Start 2P", monospace;
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
 .cells-box {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
