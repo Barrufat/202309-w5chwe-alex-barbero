@@ -2,6 +2,10 @@ import CodersArray from "./Array.js";
 
 const cellsBox = document.querySelector(".cells-box");
 const iterateButton = document.querySelector(".iterate-button");
+const selectRow = document.querySelector(".select-row");
+const selectColumn = document.querySelector(".select-column");
+const addChangesButton = document.querySelector(".add-changes");
+const setUpBox = document.querySelector(".setup-box");
 
 let gameObject = new CodersArray(
   [
@@ -183,6 +187,20 @@ gameObject[8][7] = true;
 gameObject[8][8] = true;
 gameObject[8][9] = true;
 gameObject[7][8] = true;
+
+for (let i = 0; i < gameObject.length; i++) {
+  const option = document.createElement("option");
+  option.value = [i];
+  option.textContent = [i + 1];
+  selectColumn.appendChild(option);
+}
+
+for (let i = 0; i < gameObject.length; i++) {
+  const option = document.createElement("option");
+  option.value = [i];
+  option.textContent = [i + 1];
+  selectRow.appendChild(option);
+}
 
 for (let i = 0; i < gameObject.length; i++) {
   gameObject[i].forEach((element, position) => {
@@ -450,6 +468,21 @@ const iterateGameObject = (object) => {
   gameObject = newGameObject;
   printObject(gameObject);
 };
+
+addChangesButton.addEventListener("submit", (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+
+  iterateGameObject(gameObject);
+});
+
+setUpBox.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  gameObject[event.target[0].value][event.target[1].value] =
+    event.target[2].value;
+  printObject(gameObject);
+});
 
 iterateButton.addEventListener("click", (event) => {
   event.preventDefault();

@@ -8,12 +8,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   <script type="module" src="./index.js"></script>
   <title>Game of Life</title>
 </head>
 
 <body>
   <main>
+    <h1 class="main-title">Game of life</h1>
+    <form class="setup-box">
+      <label> Select a row
+        <select class="select-row">
+
+        </select>
+      </label>
+      <label> Select a column
+        <select class="select-column">
+
+        </select>
+      </label>
+      <label> Select a column
+        <select class="select-state">
+          <option value="false">Dead</option>
+          <option value="true">Alive</option>
+        </select>
+      </label>
+      <button type="submit" class="add-changes">Add changes</button>
+    </form>
     <div class="cells-box"></div>
     <button class="iterate-button">Iterate</button>
   </main>
