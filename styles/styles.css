@@ -14,6 +14,11 @@ main {
   margin-bottom: 10px;
 }
 
+.setup-box {
+  display: flex;
+  gap: 20px;
+}
+
 .cells-box {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
